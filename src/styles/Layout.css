@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');
+
+
+.layout{
+    width: 50%;
+    font-family: "Ubuntu";
+    font-weight: 300;
+}
+
+h1{
+    height: 1.5rem;
+}
+
+.contacts{
+    height: 8rem;
+    padding: 1rem;
+    background-color: #313c4e;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.education h3{
+    height: 0.4rem;
+}
+
+.name{
+    height: 1rem;
+    font-weight: 500;
+}
+
+a{
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    gap: 1rem;
+}
+
+a img{
+    height: 1rem;
+}
+
+a p{
+    font-size: 0.9rem;
+    height: 1rem;
+    padding: 0;
+    word-wrap:break-word;
+}
+
+.right{
+    width: 50%;
+}
+
+.information{
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill-contents{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+} 
+
+.skill-contents p{
+    background-color: #989da6;
+    color: white;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+}
+
+.language-contents{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.language-contents p{
+    /* text-align: center; */
+    font-weight: 400;
+}
+
+.interest-contents{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.interest-contents p{
+    border: #989da6 solid 2px;
+    padding: 0.3rem;
+    border-radius: 0.4rem;
+}

@@ -8,11 +8,13 @@ import Certificates from "./Certificates";
 import Langauges from "./Languages";
 import Interests from "./Interests";
 
+import '../styles/Forms.css'
+
 
 class Forms extends Component{
     render(){
         return(
-            <>
+            <div className="forms">
                 <GeneralInformation/>
                 <AdditionalInformation/>
                 <Education/>
@@ -21,7 +23,8 @@ class Forms extends Component{
                 <Certificates/>
                 <Langauges/>
                 <Skills/>
-            </>
+                <Interests/>
+            </div>
         )
     }
 }
