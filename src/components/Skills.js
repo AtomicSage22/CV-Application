@@ -6,9 +6,15 @@ class Skills extends Component{
             <form>
                 <h2>Skills</h2>
                 <label for="skill">Skill:</label>
-                <input type="text" id="skill" name="skill" required/><br/><br/>
-
-                <input type="submit" value="Submit"/>
+                <input 
+                type="text" 
+                id="skill" 
+                name="skill" 
+                onChange={(e) => this.props.changefunctions.addSkill(e.target.value)}
+                required
+                />
+                <br/>
+                <br/>
             </form>
         )
     }

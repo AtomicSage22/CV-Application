@@ -6,9 +6,15 @@ class Certificates extends Component{
             <form>
                 <h2>Certificates</h2>
                 <label htmlFor="certificate">Certificate Title:</label>
-                <input type="text" id="certificate" name="certificate" required/><br/><br/>
-
-                <input type="submit" value="Submit"/>
+                <input 
+                type="text" 
+                id="certificate" 
+                name="certificate" 
+                onChange={(e) => this.props.changefunctions.addCertificate(e.target.value)}
+                required
+                />
+                <br/>
+                <br/>
             </form>
         )
     }

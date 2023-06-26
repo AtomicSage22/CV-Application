@@ -6,7 +6,15 @@ class Interests extends Component{
             <form>
                 <h2>Interests</h2>
                 <label htmlFor="interest">Interest</label>
-                <input type="text" id="interest" name="interest" required/><br/><br/>
+                <input 
+                type="text" 
+                id="interest" 
+                name="interest" 
+                onChange={(e) => this.props.changefunctions.addInterest(e.target.value)}
+                required
+                />
+                <br/>
+                <br/>
             </form>
         )
     }
