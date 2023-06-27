@@ -25,83 +25,32 @@ class Forms extends Component {
           props={this.props.props.additionalInformation}
           changefunctions={this.props.changeForms.additionalInfoFunctions}
         />
-        <div>
+
+        <div className="form-group">
           <Education
             props={this.props.props.education}
             changefunctions={this.props.changeForms.educationFunctions}
           />
-          <input
-            type="submit"
-            onClick={(e) =>
-              this.props.changeForms.educationFunctions.incrementEducation()
-            }
-            value="Add"
-          />
-        </div>
-        <div>
           <Projects
             props={this.props.props.projects}
             changefunctions={this.props.changeForms.projectFunctions}
           />
-          <input
-            type="submit"
-            onClick={(e) =>
-              this.props.changeForms.projectFunctions.incrementProjects()
-            }
-            value="Add"
+          <Skills
+            props={this.props.props.skills}
+            changefunctions={this.props.changeForms.skillFunctions}
           />
-        </div>
-        <div>
-          <Skills 
-          props={this.props.props.skills} 
-          changefunctions={this.props.changeForms.skillFunctions}
+          <Certificates
+            props={this.props.props.certificates}
+            changefunctions={this.props.changeForms.certificateFunctions}
           />
-          <input 
-          type="submit" 
-          value="Add" 
-          onClick={(e) =>
-            this.props.changeForms.skillFunctions.incrementSkills()
-          }
-          />
-        </div>
-        <div>
-          <Certificates 
-          props={this.props.props.certificates} 
-          changefunctions={this.props.changeForms.certificateFunctions}
-          />
-          <input 
-          type="submit" 
-          value="Add" 
-          onClick={(e) =>
-            this.props.changeForms.certificateFunctions.incrementCertificate()
-          }
-          />
-        </div>
-        <div>
-            <Languages
+          <Languages
             props={this.props.props.languages}
             changefunctions={this.props.changeForms.languageFunctions}
-            />
-            <input 
-            type="submit" 
-            value="Add"
-            onClick={(e) =>
-                this.props.changeForms.languageFunctions.incrementLanguages()
-              } 
-            />
-        </div>
-        <div>
-            <Interests
+          />
+          <Interests
             props={this.props.props.interests}
             changefunctions={this.props.changeForms.interestFunctions}
-            />
-            <input 
-            type="submit" 
-            value="Add" 
-            onClick={(e) =>
-                this.props.changeForms.interestFunctions.incrementInterests()
-              }
-            />
+          />
         </div>
       </div>
     );

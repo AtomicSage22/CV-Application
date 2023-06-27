@@ -2,7 +2,7 @@
 
 
 .layout{
-    width: 50%;
+    width: 50vw;
     font-family: "Ubuntu";
     font-weight: 300;
 }
@@ -90,4 +90,8 @@ a p{
     border: #989da6 solid 2px;
     padding: 0.3rem;
     border-radius: 0.4rem;
+}
+
+.resume{
+    padding: 1rem;
 }

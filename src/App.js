@@ -23,9 +23,9 @@ class App extends Component{
 
       education: [
         {
-          name: "Sagar Institute of Research And Technology",
-          title: "B.Tech",
-          date: "08/2020-present"
+          name: "",
+          title: "",
+          date: ""
         },
       ],
 
@@ -128,8 +128,12 @@ class App extends Component{
         },
         addDate : (date) =>{
           this.setState(prevState => prevState.education[this.state.education.length -1].date = date)
-        }
-      },
+        },
+        deleteEducation: () =>{
+          let slicedArray = this.state.education.slice(0,-1);
+          this.setState({education: slicedArray});
+      }
+    },
       projectFunctions:{
         incrementProjects: () =>{
           this.setState(prevState => ({
@@ -138,6 +142,10 @@ class App extends Component{
         },
         addProject: (title) =>{
           this.setState(prevState => prevState.projects[this.state.projects.length -1] = title)
+        },
+        deleteProject: () =>{
+          let slicedArray = this.state.projects.slice(0,-1);
+          this.setState({projects: slicedArray});
         }
       },
       skillFunctions:{
@@ -148,6 +156,10 @@ class App extends Component{
         },
         addSkill: (title) =>{
           this.setState(prevState => prevState.skills[this.state.skills.length -1] = title)
+        },
+        deleteSkill: () =>{
+          let slicedArray = this.state.skills.slice(0,-1);
+          this.setState({skills: slicedArray});
         }
       },
       certificateFunctions: {
@@ -158,6 +170,10 @@ class App extends Component{
         },
         addCertificate: (title) =>{
           this.setState(prevState => prevState.certificates[this.state.certificates.length -1] = title)
+        },
+        deleteCertificate: () =>{
+          let slicedArray = this.state.certificates.slice(0,-1);
+          this.setState({certificates: slicedArray});
         }
       },
       languageFunctions: {
@@ -168,6 +184,10 @@ class App extends Component{
         },
         addLanguage: (title) =>{
           this.setState(prevState => prevState.languages[this.state.languages.length -1] = title)
+        },
+        deleteLanguage: () =>{
+          let slicedArray = this.state.languages.slice(0,-1);
+          this.setState({languages: slicedArray});
         }
       },
       interestFunctions: {
@@ -178,13 +198,15 @@ class App extends Component{
         },
         addInterest: (title) =>{
           this.setState(prevState => prevState.interests[this.state.interests.length -1] = title)
+        },
+        deleteInterest: () =>{
+          let slicedArray = this.state.interests.slice(0,-1);
+          this.setState({interests: slicedArray});
         }
       }
 
       }
     }
- 
-  
   render(){
     return (
       <>
