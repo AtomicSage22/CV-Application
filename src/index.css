@@ -7,21 +7,53 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
+  margin: auto;
   overflow-x: hidden;
 }
-#root{
-  justify-content: space-between;
+
+
+
+#image::-webkit-file-upload-button{
+  visibility: hidden;
+}
+
+#image::before{
+  content: 'Select some files';
+  display: inline-block;
+  border-radius: 0.3rem;
+  font-size: 10pt;
+  background-color: #313c4e;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+main{
   width: 100vw;
   display: flex;
   height: 100vh;
 }
 
+header{
+  display: flex;
+  width: 100vw;
+  background-color:#313c4e;
+  color: white;
+  justify-content: center;
+  height: 4rem;
+  align-items: center;
+}
 
+header h1{
+  margin: 0;
+}
 
 .forms{
   width: 50%;
   gap: 3rem;
-  
 }
 
 form {
@@ -33,6 +65,7 @@ form {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
+  padding-bottom: 2rem;
 }
 
 

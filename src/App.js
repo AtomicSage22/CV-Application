@@ -12,7 +12,8 @@ class App extends Component{
         email: "",
         phone: "",
         address: "",
-        title: ""
+        title: "",
+        image: ""
       },
       
       additionalInformation: {
@@ -82,8 +83,15 @@ class App extends Component{
               title: title
             }
           }))
-        }
-      },
+        },
+        updateImage : (image) =>{
+          this.setState(prevState =>({
+            generalInformation: {
+              ...prevState.generalInformation,
+              image: URL.createObjectURL(image)
+            }
+          }))
+      }},
       additionalInfoFunctions: {
         updateAbout: (about) =>{
           this.setState(prevState =>({
@@ -210,13 +218,17 @@ class App extends Component{
   render(){
     return (
       <>
-        <Forms className = "form-group"
-        props = {this.state} 
-        changeForms = {this.functions}
-        changeName = {this.updateName}
-        changeEmail = {this.updateEmail}
-        />
-        <Layout props = {this.state} change = {this.updateName}/>
+        <header><h1>CV-Maker</h1></header>
+        <main>
+          <Forms className = "form-group"
+          props = {this.state} 
+          changeForms = {this.functions}
+          changeName = {this.updateName}
+          changeEmail = {this.updateEmail}
+          />
+          <div className='divider'></div>
+          <Layout props = {this.state} change = {this.updateName}/>
+        </main>
       </>
     )
   }

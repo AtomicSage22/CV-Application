@@ -2,6 +2,7 @@ import { Component } from "react";
 import React from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import ReactToPrint from "react-to-print";
 
 import '../styles/Layout.css';
 import email from '../assets/email.png';
@@ -49,30 +50,35 @@ class Layout extends Component{
         const interests = this.props.props.interests.map((interest)=>
             <p>{interest}</p>
             );
+            
 
-        const downloadPDF = () =>{
-            const input = this.pdfRef.current;
-            html2canvas(input).then((canvas) =>{
-                const imgData = canvas.toDataURL('image/png');
-                const pdf = new jsPDF('p', 'mm', 'a4', true);
-                const pdfWidth = pdf.internal.pageSize.getWidth();
-                const pdfHeight = pdf.internal.pageSize.getHeight();
-                const imgWidth = canvas.width;
-                const imgHeight = canvas.height;
-                const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-                const imgX = (pdfWidth - imgWidth * ratio) / 2;
-                const imgY = 30;
-                pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
-                pdf.save('invoice.pdf')
-            });
-        };
+        // const downloadPDF = () =>{
+        //     const input = this.pdfRef.current;
+        //     html2canvas(input).then((canvas) =>{
+        //         const imgData = canvas.toDataURL('image/jpeg', );
+        //         const pdf = new jsPDF('p', 'mm', 'a4', true);
+        //         const pdfWidth = pdf.internal.pageSize.getWidth();
+        //         const pdfHeight = pdf.internal.pageSize.getHeight();
+        //         const imgWidth = canvas.width;
+        //         const imgHeight = canvas.height;
+        //         const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+        //         const imgX = (pdfWidth - imgWidth * ratio) / 2;
+        //         const imgY = 30;
+        //         pdf.addImage(imgData, 'JPEG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
+        //         pdf.save(`${generalInformation.name}'s Resume.pdf`)
+        //     });
+        // };
+        
         return(
             <div className="layout">
-                <div className="resume" ref={this.pdfRef}> 
+                <div className="resume" ref={(element)=>(this.pdfRef = element)}> 
                     <div className="header">
-                        <h1>{generalInformation.name}</h1>
-                        <h3>{this.props.props.generalInformation.title}</h3>
-                        <p>{additionalInformation.about}</p>
+                        <img src={generalInformation.image} alt=""/>
+                        <div className="header-information">
+                            <h1>{generalInformation.name}</h1>
+                            <h3>{this.props.props.generalInformation.title}</h3>
+                            <p>{additionalInformation.about}</p>
+                        </div>
                     </div>
                     <div className="contacts">
                     <a href = {"mailto:" + generalInformation.email}><img src={email}/><p>{generalInformation.email}</p></a>
@@ -123,7 +129,15 @@ class Layout extends Component{
                         </div>
                     </div>
                 </div>
-                <button onClick={downloadPDF}>Download</button>
+                {/* <button onClick={downloadPDF}>Download</button> */}
+                <ReactToPrint
+                trigger = {()=>{
+                    return <button>Download</button>
+                }}
+                content = {()=> this.pdfRef}
+                documentTitle="Resume"
+                />
+
             </div>
         )
     }

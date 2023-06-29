@@ -53,10 +53,20 @@ class GeneralInformation extends Component{
                         <label htmlFor="address">Address:</label>
                         <input
                         type="text"
-                        id="address"
+                        id="address"    qa
                         name="address"
                         value={props.address}
                         onChange={(e)=> change.updateAddress(e.target.value)}
+                        required/><br/><br/>
+                        <label htmlFor="image">Image URL:</label>
+                        <input
+                        type="file"
+                        id="image"
+                        name="image"
+                        onChange={(e)=> {
+                            if(e.target.files.length)
+                            change.updateImage(e.target.files[0]
+                            )}}
                         required/><br/><br/>
                     </div>
                 </div>

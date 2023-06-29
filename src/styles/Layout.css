@@ -3,12 +3,29 @@
 
 .layout{
     width: 50vw;
+    margin: 4rem;
     font-family: "Ubuntu";
-    font-weight: 300;
+    font-weight: 200;
+
 }
 
-h1{
+.header{
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+}
+
+.header img{
+    border-radius: 50%;
+    height: 8rem;
+    width: 8rem;
+}
+.layout button{
+    padding-left: 1rem;
+}
+.layout h1{
     height: 1.5rem;
+    padding-left: 1rem;
 }
 
 .contacts{
@@ -18,18 +35,25 @@ h1{
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
+    padding-left: 1rem;
 }
 
 .education h3{
     height: 0.4rem;
 }
 
+.header h3, p{
+    padding-left: 1rem;
+}
+
 .name{
     height: 1rem;
     font-weight: 500;
+
 }
 
 a{
+    padding-left: 1rem;
     display: flex;
     align-items: center;
     color: white;
@@ -52,6 +76,9 @@ a p{
     width: 50%;
 }
 
+.left{
+    padding-left: 1rem;
+}
 .information{
     display: flex;
     justify-content: space-between;
@@ -92,6 +119,4 @@ a p{
     border-radius: 0.4rem;
 }
 
-.resume{
-    padding: 1rem;
-}
+

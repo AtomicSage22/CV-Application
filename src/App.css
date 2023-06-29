@@ -1,6 +1,9 @@
-.App {
-  text-align: center;
-  background-color: blac;
+.forms{
+  margin: 4rem;
+  font-size: large;
 }
-
-
+.divider{
+  width: 1rem;
+  height: 153vh;
+  background-color: black;
+}
